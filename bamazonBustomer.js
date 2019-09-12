@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: " ",
+    password: "",
     database: "bamazon"
 });
 
@@ -65,7 +65,7 @@ function purchaseOrder(ID, amtNeeded) {
 
             connection.query("UPDATE products SET stock_quantity = stock_quantity - " + amtNeeded + " WHERE item_id = " + ID);
         } else {
-            console.log("Insufficient quantity, sorry we do not have enough " + res[0].product_name + "to complete your order.");
+            console.log(" Insufficient quantity, sorry we do not have enough " + res[0].product_name + "to complete your order.");
         };
         inventory();
     });
